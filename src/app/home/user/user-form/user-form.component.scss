@@ -1,0 +1,14 @@
+.row-container {
+    display: flex;
+    flex-direction: row;
+    //gap: 16px;
+  
+    &.single-column {
+      flex-direction: column;
+    }
+  
+    .column {
+      flex: 1;
+    }
+  }
+  

@@ -1,0 +1,49 @@
+<mat-toolbar color="primary">
+    <span>SPARTAN     <mat-icon>fitness_center</mat-icon>
+    </span>
+
+    <span class="spacer"></span>
+    <button mat-icon-button [matMenuTriggerFor]="menu" *ngIf="isLogin">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+      
+      <button mat-menu-item [matMenuTriggerFor]="submenuChecador">
+        <mat-icon>vpn_key</mat-icon>
+        Checador
+      </button>
+      
+      <button mat-menu-item (click)="user()">
+        <mat-icon>account_circle</mat-icon>
+        User
+      </button>
+      <button mat-menu-item (click)="product()">
+        <mat-icon>shopping_cart</mat-icon>
+        Products
+      </button>
+      <button mat-menu-item (click)="product()">
+        <mat-icon>shopping_cart</mat-icon>
+        Infraestructura
+      </button>
+      <button mat-menu-item>
+        <mat-icon>settings</mat-icon>
+        Configuration
+      </button>
+      <button mat-menu-item (click)="exit()">
+        <mat-icon>exit_to_app</mat-icon>
+        Salir
+      </button>
+    </mat-menu>
+  
+    <mat-menu #submenuChecador="matMenu" >
+      <button mat-menu-item  routerLink="/home/finger-print">
+        <mat-icon>fingerprint</mat-icon>
+        Huella
+      </button>
+      <button mat-menu-item routerLink="/home/auth-face">
+        <mat-icon>face</mat-icon>
+        Reconocimiento
+      </button>
+     
+    </mat-menu>
+    
