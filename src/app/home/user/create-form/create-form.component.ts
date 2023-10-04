@@ -7,11 +7,11 @@ import { EmployeeService } from 'src/app/shared/employee.service';
 import { NotificationService } from 'src/app/shared/notification.service';
 
 @Component({
-  selector: 'app-user-form',
-  templateUrl: './user-form.component.html',
-  styleUrls: ['./user-form.component.scss'],
+  selector: 'app-create-form',
+  templateUrl: './create-form.component.html',
+  styleUrls: ['./create-form.component.scss'],
 })
-export class UserFormComponent {
+export class CreateFormComponent {
   isSingleColumnLayout = false; // Variable para controlar el diseño de las columnas
 
   webcamImage: WebcamImage | undefined;

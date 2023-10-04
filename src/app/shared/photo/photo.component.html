@@ -2,21 +2,21 @@
 <div [ngSwitch]="fly" >
     
 
-    <div class="add-photo-button" (click)="openCamera()" *ngSwitchCase="'icon'"   (click)="clickOutput(false,'open')">
+    <div class="add-photo-button"  *ngSwitchCase="'icon'"   (click)="clickOutput(false,'open')">
       <div class="circle"  >
-        <img class="profile-pic"   src={{img}} [ngClass]="{'profile': fly2 == true}">
+        <img class="profile-pic"   src={{img}} [ngClass]="{'profile': fly2 == true}" (click)="openCamera()">
     </div>
     <div class="p-image">
       <mat-icon style="font-size: 30px;
       color: #555555;
-      height: 30px;
-      border-radius: 30px;
+      height: 26.5px;
+      border-radius: 10px;
       width: 30px;">photo_camera</mat-icon>
         <input class="file-upload" type="file" accept="image/*"/>
     </div>
 
   </div>
-    <div *ngSwitchCase="'open'" style=" display: flex;
+    <div *ngSwitchCase="'open'"  style=" display: flex;
     justify-content: center; /* Centra horizontalmente */
     align-items: center; /* Centra verticalmente */
     " >

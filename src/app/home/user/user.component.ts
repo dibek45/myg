@@ -7,9 +7,10 @@ import { MatTableDataSource } from '@angular/material/table';
 import { MatSort } from '@angular/material/sort';
 import { MatPaginator } from '@angular/material/paginator';
 import { Router } from '@angular/router';
+import { Usuarios } from './user-table/user-table.component';
 
 
-const ELEMENT_DATA: PeriodicElement[] = [
+const ELEMENT_DATA: Usuarios[] = [
   { id: 1, name: 'David', created_at: '2023-06-30', actived: true },
   { id: 2, name: 'Alejandro', created_at: '2023-07-01', actived: false },
   { id: 3, name: 'Diana', created_at: '2023-07-05', actived: true },
@@ -28,12 +29,7 @@ const ELEMENT_DATA: PeriodicElement[] = [
   { id: 20, name: 'Norma', created_at: '2023-07-19', actived: true },
 ];
 
-export interface PeriodicElement {
-  id: number;
-  name: string;
-  created_at: string;
-  actived: boolean;
-}
+
 @Component({
   selector: 'app-user',
   templateUrl: './user.component.html',

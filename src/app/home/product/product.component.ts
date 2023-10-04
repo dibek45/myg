@@ -9,7 +9,7 @@ import { MatPaginator } from '@angular/material/paginator';
 import { Router } from '@angular/router';
 
 
-const ELEMENT_DATA: PeriodicElement[] = [
+const ELEMENT_DATA: Miembros[] = [
   { id: 1, name: 'David', created_at: '2023-06-30', actived: true },
   { id: 2, name: 'Alejandro', created_at: '2023-07-01', actived: false },
   { id: 3, name: 'Diana', created_at: '2023-07-05', actived: true },
@@ -28,7 +28,7 @@ const ELEMENT_DATA: PeriodicElement[] = [
   { id: 20, name: 'Norma', created_at: '2023-07-19', actived: true },
 ];
 
-export interface PeriodicElement {
+export interface Miembros {
   id: number;
   name: string;
   created_at: string;

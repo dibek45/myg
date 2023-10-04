@@ -12,19 +12,21 @@ import { userRoutesRoutingModule } from './user-routing.module';
 import { UserTableComponent } from './user-table/user-table.component';
 import { AddphotoModule } from 'src/app/shared/addphoto/addphoto.module';
 import { PhotoComponent } from 'src/app/shared/photo/photo.component';
+import { CardComponent } from 'src/app/shared/card/card.component';
+import { CreateFormComponent } from './create-form/create-form.component';
 
   
 
 @NgModule({
   declarations: [
-    UserFormComponent,UserComponent, UserTableComponent
+    CreateFormComponent,UserFormComponent,UserComponent, UserTableComponent
   ],
   imports: [
     userRoutesRoutingModule,
     CommonModule,
     MaterialModuleModule,
     FormsModule,    ReactiveFormsModule,
-    FlexLayoutModule,PhotoComponent
+    FlexLayoutModule,PhotoComponent,CardComponent
   ],
   exports:[],
   providers:[EmployeeService,DatePipe,NotificationService]

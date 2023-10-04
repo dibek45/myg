@@ -24,9 +24,7 @@ import { WebcamModule } from 'ngx-webcam';
     MenuComponent,
     LoginComponent,
     HomeComponent,
-    
-  
-    
+
   ],
   imports: [
     BrowserAnimationsModule,

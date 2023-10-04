@@ -13,7 +13,6 @@ import { MatDialogRef } from '@angular/material/dialog';
 import { NotificationService } from '../shared/notification.service';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { ProductModule } from './product/product.module';
-import { PhotoComponent } from '../shared/photo/photo.component';
 
 
 

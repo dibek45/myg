@@ -1,59 +1,17 @@
 <div class="search-div">
-  
-    <button mat-raised-button (click)="onCreate()">
-      <mat-icon>add</mat-icon>Create
+  <button mat-raised-button (click)="onCreate()">
+    <mat-icon>add</mat-icon>Create
+  </button>
+  <mat-form-field class="search-form-field">
+    <input matInput [(ngModel)]="searchKey" placeholder="Search" autocomplete="off" (keyup)="applyFilter($event)">
+    <button mat-button matSuffix mat-icon-button aria-label="Clear" *ngIf="searchKey" (click)="onSearchClear()">
+      <mat-icon>clear</mat-icon>
     </button>
-    <mat-form-field class="search-form-field" >
-      <input matInput [(ngModel)]="searchKey" #input placeholder="Search" autocomplete="off" (keyup)="applyFilter($event)" >
-      <button mat-button matSuffix mat-icon-button aria-label="Clear"*ngIf="searchKey"  (click)="onSearchClear()">
-       
-      </button>
-    </mat-form-field>
-  </div>
+  </mat-form-field>
+</div>
   <div class="search-div">
     <!-- ... Resto del código ... -->
   </div>
-  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" matSort>
-  
-    <!-- Position Column -->
-    <ng-container matColumnDef="id">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header> No. </th>
-      <td mat-cell *matCellDef="let element"> {{element.id}} </td>
-    </ng-container>
-  
-    <!-- Name Column -->
-    <ng-container matColumnDef="name">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header> Name </th>
-      <td mat-cell *matCellDef="let element"> {{element.name}} </td>
-    </ng-container>
-  
-    <!-- Weight Column -->
-    <ng-container matColumnDef="created_at">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header> registred date </th>
-      <td mat-cell *matCellDef="let element"> {{element.created_at}} </td>
-    </ng-container>
-  
-    <!-- Symbol Column -->
-    <ng-container matColumnDef="actived">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header> Actived </th>
-      <td mat-cell *matCellDef="let element">
-        <div [ngClass]="{ 'green-icon': element.actived }">
-          <mat-icon *ngIf="element.actived; else inactiveIcon" class="circle-check">check-box</mat-icon>
-        </div>
-        <ng-template #inactiveIcon (click)="close()">
-         <mat-icon [ngClass]="{ 'red-icon': !element.actived }">close</mat-icon>
-        </ng-template>
-      </td>
-    </ng-container>
-  
-    <tr class="mat-row" *matNoDataRow>
-      <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
-    </tr>
-    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-  
-  
-  </table>
-  
-  <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons aria-label="Select page of periodic elements">
-  </mat-paginator>
+  <div style="display: flex; flex-wrap: wrap; flex-direction: row;">
+    <app-card *ngFor="let element of filteredElements" [element]="element" (click)="viewDetails()"></app-card>
+  </div>
